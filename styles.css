@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* particulas aqui*/
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* container aqui */
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* header aqui */
+.header {
+  position: relative;
+  padding: 25px 0;
+  border-bottom: 1px solid #1e293b;
+  background: rgba(2,6,23,0.6);
+  backdrop-filter: blur(10px);
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 14px;
+  margin-left: 12px; 
+  margin-right: 12px; 
+}
+
+nav a:hover {
+  color: #3b82f6;
+}
+
+/* hero aqui */
+.hero {
+  padding: 140px 0 110px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #9ca3af;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* botão aqui */
+.btn-primary {
+  margin-top: 0px;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  border: none;
+  padding: 11px 22px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #2563eb88;
+}
+
+/* secção qualquer base aqui */
+.section {
+  padding: 110px 0;
+}
+
+/* destaque dos cursos */
+.section-dark {
+  background: linear-gradient(180deg, #020617, #0a0f1f);
+  position: relative;
+}
+
+/* destaque do instrutor a secção*/
+.section-alt {
+  background: linear-gradient(180deg, #00030f, #020617);
+  position: relative;
+}
+
+/* fundo brilhante haha */
+.section-dark::before,
+.section-alt::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #2563eb33, transparent 70%);
+  filter: blur(110px);
+  z-index: 0;
+}
+
+.section-dark::before {
+  top: -120px;
+  left: -120px;
+}
+
+.section-alt::before {
+  bottom: -120px;
+  right: -120px;
+}
+
+.section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* random titulos*/
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+}
+
+/* grade qualquer */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* cartões para colocar coisas ainda n colocadas */
+.card {
+  background: #111827;
+  padding: 26px;
+  border-radius: 14px;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #2563eb55;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* caixa */
+.visual-box {
+  height: 280px;
+  border-radius: 18px;
+  background: radial-gradient(circle,#2563eb33,#020617);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+}
+
+.center p {
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+/* rodapé */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #1e293b;
+  color: #9ca3af;
+}
+
+/* flex do hero pq implementei mal */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* logo a jeito de ser vista */
+.hero-logo {
+  width: 300px;
+  z-index: 2;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* haha brilho atras da logo */
+.glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, #2563eb55, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* cirulo desfuncional e a rotação é estupida tirar depois */
+.ring {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #2563eb44;
+  border-radius: 50%;
+  animation: rotate 30s linear infinite,
+             drift 8s ease-in-out infinite;
+}
+
+/* haha pontos*/
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.dot1 {
+  top: 10%;
+  right: 20%;
+  animation: float 5s infinite;
+}
+
+.dot2 {
+  bottom: 15%;
+  left: 15%;
+  animation: float 6s infinite;
+}
+
+/* isto tem de ser removido */
+.line {
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  top: 50%;
+  right: -20px;
+  animation: pulse 3s infinite;
+}
+
+/* inferno começa aqui */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1.1); }
+  100% { opacity: 0.2; transform: scaleX(0.8); }
+}
+
+/* acho que ta responsivo */
+@media (max-width: 900px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-visual {
+    margin-top: 40px;
+  }
+}
+
+@keyframes drift {
+  0%, 100% { 
+    transform: rotate(0deg) translateY(0px) translateX(0px);
+  }
+
+  25% { 
+    transform: rotate(90deg) translateY(-8px) translateX(6px);
+  }
+
+  50% { 
+    transform: rotate(180deg) translateY(6px) translateX(-6px);
+  }
+
+  75% { 
+    transform: rotate(270deg) translateY(-6px) translateX(8px);
+  }
+}
+
+
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-visual {
+    margin-top: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .hero {
+    padding: 100px 0 80px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-logo {
+    width: 220px;
+  }
+
+  .ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .glow {
+    width: 240px;
+    height: 240px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
